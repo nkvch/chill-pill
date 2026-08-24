@@ -49,11 +49,22 @@ Produce a **draft hypothesis**: a list of candidate capabilities with a guess at
 what each is for. Guessing here is fine — the interview corrects you, and a
 wrong guess is easier for a human to correct than an open question.
 
-### 2. Interview, area by area
+### 2. Interview, one question at a time
 
-Present your hypothesis in small batches (3–6 areas at a time) and ask about
-each. Keep going until the picture is complete — many questions is the point
-here, this is a one-time investment.
+**Never dump a list of questions.** Show the draft hypothesis once, so the human
+can see what you already believe — then ask about it **one question per
+message**, wait for the answer, write it down, and ask the next. Follow up when
+an answer opens something up; skip the questions an answer just made pointless.
+
+There will be many questions before the picture is complete — that is expected
+and it is a one-time investment. But fifteen questions asked one at a time is a
+conversation someone will actually finish; fifteen questions asked at once is a
+form they will abandon halfway through.
+
+Record each answer as you get it (in the model file, or in your notes if the
+file doesn't exist yet). Never rely on holding fifteen answers in your head and
+writing them up at the end — the point of asking one at a time is that each
+answer is banked before the next question is asked.
 
 Per capability, you want:
 

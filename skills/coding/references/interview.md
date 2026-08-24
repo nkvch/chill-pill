@@ -1,6 +1,9 @@
 # Interview question bank
 
-Pick the few that actually matter for this task. Never dump the whole list.
+**This is a bank to draw from, not a script to read out.** Ask ONE question,
+wait for the answer, then decide what to ask next — including follow-ups the
+bank doesn't contain. Never paste a numbered list of questions at someone.
+
 Concrete beats open-ended: "веб, мобилка или Telegram-бот?" gets an answer;
 "какие требования?" gets a shrug.
 

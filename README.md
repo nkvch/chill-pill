@@ -20,9 +20,11 @@ Runs on any request to write, change, prototype or debug code.
    hardened. Defaults to the lowest rung that answers your request, never climbs
    on its own initiative, and checkpoints with you at the top of each rung. No
    database "because we'll need it later".
-2. **Interviews you before designing.** Concrete, answerable questions, batched,
-   and it waits. Then it contributes: what could go wrong, how this is normally
-   done, a cheaper path, the decision that will be expensive to reverse.
+2. **Interviews you before designing — one question at a time.** Concrete and
+   answerable, asked singly, waiting for each answer and following up on it. No
+   walls of numbered questions. Then it contributes: what could go wrong, how
+   this is normally done, a cheaper path, the decision that will be expensive to
+   reverse.
 3. **Writes a tiny spec** — in chat, never as a file in your repo.
 4. **Builds the minimum that satisfies it.** No speculative flexibility, no
    unrequested UI polish, no abstraction for a single call site, no new

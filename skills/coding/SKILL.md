@@ -52,9 +52,18 @@ Read `references/interview.md` for the question bank. Rules of engagement:
 - **Ask before designing, not after implementing.** This is the single
   highest-value phase; do not skip it because the request sounds clear.
 - Ask **concrete, answerable** questions — "веб, мобилка или Telegram-бот?",
-  not "какие у тебя требования?". 3–7 questions is usually right; at R0 one or
-  two.
-- **Batch them and wait.** Do not start coding with questions outstanding.
+  not "какие у тебя требования?".
+- **ONE QUESTION PER MESSAGE. Never a list.** Ask, wait for the answer, react
+  to it — a follow-up if the answer opened something up, otherwise the next
+  question. A wall of numbered questions is not an interview, it is a form, and
+  nobody wants to fill in a form. This rule has no exceptions and no "but this
+  batch is short".
+- Because you ask one at a time, each answer can change what you ask next.
+  That is the point: a real interview is a conversation, not a questionnaire.
+- Where the plausible answers are enumerable, offer them (AskUserQuestion, or
+  "веб / мобилка / Telegram-бот / что-то ещё?") so answering costs one word.
+- Keep going until you can state the goal without hedging — usually a handful
+  of questions, at R0 often one. Do not start coding with questions outstanding.
 - If the answer is "делай как знаешь" — give your recommendation and get an
   explicit yes to *that*, don't treat it as a blank cheque.
 
