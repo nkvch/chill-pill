@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "chill-pill",
+  "description": "A single lightweight plugin that makes an agent interview you before it builds, keep the code minimal, and clean up after itself.",
+  "owner": {
+    "name": "Stanislau Stankevich",
+    "url": "https://github.com/nkvch"
+  },
+  "plugins": [
+    {
+      "name": "chill-pill",
+      "description": "Vibe coding without the headache: interview first, build the smallest thing that works, climb the prototype-to-production ladder only when asked, and clean up what the change made pointless.",
+      "source": "./",
+      "category": "development"
+    }
+  ]
+}

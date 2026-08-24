@@ -1,0 +1,12 @@
+{
+  "name": "chill-pill",
+  "version": "0.1.0",
+  "description": "Vibe coding without the headache: interview first, build the smallest thing that works, climb the prototype-to-production ladder only when asked, and clean up what the change made pointless.",
+  "author": {
+    "name": "Stanislau Stankevich",
+    "url": "https://github.com/nkvch"
+  },
+  "homepage": "https://github.com/nkvch/chill-pill",
+  "license": "MIT",
+  "keywords": ["skills", "workflow", "code-review", "prototyping", "refactoring"]
+}
