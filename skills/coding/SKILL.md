@@ -167,10 +167,15 @@ important. They are not. Before non-trivial work in an existing repo:
 
 ---
 
-## 8. Commits
+## 8. Written artifacts are in English
 
-- **Commit messages are always in English**, whatever language the conversation
-  is in. Imperative mood, say what changed and why, no emoji.
+Talk to the human in whatever language they use. But **everything that gets
+written down and stays** — commit messages, code comments, identifiers, docs,
+READMEs, PR descriptions, the project model — is in **English**, always, even
+when the whole conversation is in another language. Artifacts outlive the
+conversation and are read by people who were not in it.
+
+- **Commit messages:** imperative mood, say what changed and why, no emoji.
 - One coherent change per commit; don't bundle unrelated cleanup with a feature.
 - Commit when asked to. If the repo's own conventions (CLAUDE.md, contributing
   docs) say otherwise, they win.

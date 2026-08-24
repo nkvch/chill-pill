@@ -33,7 +33,8 @@ Runs on any request to write, change, prototype or debug code.
    module solves, not at the level of getters.
 6. **Reflects at the end** — hands off to `cleanup`.
 
-Commit messages are always in English, whatever language you're speaking.
+Everything durable — commit messages, comments, docs, the project model — is written in
+English, whatever language you're speaking. Artifacts outlive the conversation.
 
 ### `project-model`
 A code map tells you what exists; it can't tell you what matters. Read code

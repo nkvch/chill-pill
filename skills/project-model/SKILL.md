@@ -98,6 +98,10 @@ Good questions to reuse:
 
 Use `references/template.md`. Rules:
 
+- **Write the model in English**, whatever language the interview was conducted
+  in. Ask the questions in the human's language; write the answers down in
+  English. The model is a durable artifact and gets read by people who were not
+  in the conversation.
 - Product language. If a line only makes sense to someone reading the source,
   rewrite it.
 - One entry per capability, not per file. Point at the code (paths), don't
