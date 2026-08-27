@@ -140,7 +140,38 @@ deliberate, not a side effect.
 
 ---
 
-## 6. Closing reflection — what did this make pointless?
+## 6. Prove it on the artifact a human uses
+
+**Before the word "done", at every rung.** A change is verified when you have
+looked at the thing the user depends on. Not at what the system says about
+itself.
+
+- **A status field is a claim, not evidence.** `last_status = ok`, a green run, a
+  200, "the deploy succeeded", "it answered once" — all of these are the system
+  reporting on itself, and all of them survive a component that is doing
+  nothing. Read the data instead: fresh rows, a moving watermark, a growing
+  count, the file on disk, the page in the browser.
+- **A suspiciously fast success is a failure.** A job that used to take two
+  minutes and now takes six seconds did not get faster.
+- **No traffic means no evidence.** "Nobody has used it yet" is zero
+  information. Report it as "not verified — there was no traffic", never as
+  "working".
+- **If you bypassed the normal code path** — restored a database by hand, wrote a
+  row instead of calling the endpoint, provisioned something manually — then open
+  that code path and list, line by line, every invariant it establishes:
+  ownership, grants, secondary roles, settings, indexes, side tables. Check every
+  one of them, not only the one that surfaced as an error. The invariants you
+  skipped did not break; they were never established, so nothing will report them
+  as broken.
+
+Cost of skipping this, measured: a hand-migrated database left a schema owned by
+the wrong role. Reads worked, so the tenant looked healthy, while the sync
+reported success 118 times and wrote nothing for 29 hours. Found by the client,
+not by us. Both fixes took five minutes each; only the looking was missing.
+
+---
+
+## 7. Closing reflection — what did this make pointless?
 
 **Mandatory before you call the task done at R1+.** Load the `cleanup` skill
 and run it. In short: your change often obsoletes older code — a superseded
@@ -150,7 +181,7 @@ Leaving them is how a codebase turns into a swamp nobody can reason about.
 
 ---
 
-## 7. The project model
+## 8. The project model
 
 Reasoning about a codebase by reading code makes every 100 lines look equally
 important. They are not. Before non-trivial work in an existing repo:
@@ -167,7 +198,7 @@ important. They are not. Before non-trivial work in an existing repo:
 
 ---
 
-## 8. Written artifacts are in English
+## 9. Written artifacts are in English
 
 Talk to the human in whatever language they use. But **everything that gets
 written down and stays** — commit messages, code comments, identifiers, docs,
@@ -193,5 +224,8 @@ conversation and are read by people who were not in it.
 | "They'll want this configurable later" | They'll ask later. Later is cheaper than wrong now. |
 | "It needs a proper architecture" | At R1 it needs to run. |
 | "Tests would slow down this prototype" | Correct — that's why R0/R1 have none. Don't use it as an excuse at R2. |
-| "The old code still works, leave it" | It works and it is now pointless. That is exactly what phase 6 is for. |
+| "The old code still works, leave it" | It works and it is now pointless. That is exactly what phase 7 is for. |
+| "The job says ok, so it works" | It says it ran. Read the data it was supposed to write. |
+| "I fixed the error it showed me" | You fixed the one that surfaced. List the rest from the code. |
+| "Nobody has complained, so it's fine" | Nobody has used it. That is not the same sentence. |
 | "I'll write a plan file in their repo" | Their repo is not your notebook. Chat, or the project model directory. |
