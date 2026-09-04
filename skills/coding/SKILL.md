@@ -5,10 +5,11 @@ description: "Use for ANY request to write, change, prototype, refactor or debug
 
 # Coding without losing your mind
 
-Most of the pain of agentic coding comes from four moves: guessing instead of
+Most of the pain of agentic coding comes from five moves: guessing instead of
 asking, building a cathedral when a shed was asked for, climbing straight to
-production when the human wanted to poke at an idea, and leaving behind a pile
-of code nobody dares delete. This skill exists to stop all four.
+production when the human wanted to poke at an idea, declaring the work done
+without anyone reviewing it, and leaving behind a pile of code nobody dares
+delete. This skill exists to stop all five.
 
 **Run the phases in order.** Ceremony scales with the rung (§1); the phases
 themselves do not disappear.
@@ -119,7 +120,7 @@ steps with TodoWrite for anything beyond two steps.
 
 **Surgical while building.** Don't "improve" adjacent code, reflow comments,
 reorder imports or refactor things that are not in your way. Every changed line
-should trace to the request or to your own mess. Cleanup is phase 6, and it is
+should trace to the request or to your own mess. Cleanup is phase 8, and it is
 deliberate, not a side effect.
 
 ---
@@ -169,9 +170,29 @@ the wrong role. Reads worked, so the tenant looked healthy, while the sync
 reported success 118 times and wrote nothing for 29 hours. Found by the client,
 not by us. Both fixes took five minutes each; only the looking was missing.
 
+## 7. Review the diff before you call it done (R2+)
+
+**Mandatory at R2+, on request at R1, never at R0.** Load the `om-code-review`
+skill (Open Mercato's review engine, installed alongside this plugin) and run it
+over your own diff — the current branch against its merge-base, uncommitted
+changes included. It gives you what self-satisfaction does not: a validation
+gate that actually runs, a severity-ranked list (blocker / major / minor / nit),
+a breaking-change checklist, and a mechanical verdict.
+
+- Fix every **blocker** and **major** before showing the work. Minors and nits
+  you list for the human; do not silently expand scope to fix them.
+- `om-code-review` expects an `.ai/agentic.config.json`. If the repo has none,
+  **do not run `om-setup-agent-pipeline`** and do not scaffold `.ai/` into
+  someone's repo — that is exactly the "plan file in their repo" this skill
+  forbids. Instead derive the validation gate from what the repo already has
+  (`package.json` scripts, `Makefile`, CI config, CLAUDE.md) and state which
+  commands you ran. Only set up the config when the human asks for it.
+- The review is of **your** diff. A finding about pre-existing code goes into
+  phase 8's list, not into a drive-by fix.
+
 ---
 
-## 7. Closing reflection — what did this make pointless?
+## 8. Closing reflection — what did this make pointless?
 
 **Mandatory before you call the task done at R1+.** Load the `cleanup` skill
 and run it. In short: your change often obsoletes older code — a superseded
@@ -181,7 +202,7 @@ Leaving them is how a codebase turns into a swamp nobody can reason about.
 
 ---
 
-## 8. The project model
+## 9. The project model
 
 Reasoning about a codebase by reading code makes every 100 lines look equally
 important. They are not. Before non-trivial work in an existing repo:
@@ -198,7 +219,7 @@ important. They are not. Before non-trivial work in an existing repo:
 
 ---
 
-## 9. Written artifacts are in English
+## 10. Written artifacts are in English
 
 Talk to the human in whatever language they use. But **everything that gets
 written down and stays** — commit messages, code comments, identifiers, docs,
@@ -224,8 +245,9 @@ conversation and are read by people who were not in it.
 | "They'll want this configurable later" | They'll ask later. Later is cheaper than wrong now. |
 | "It needs a proper architecture" | At R1 it needs to run. |
 | "Tests would slow down this prototype" | Correct — that's why R0/R1 have none. Don't use it as an excuse at R2. |
-| "The old code still works, leave it" | It works and it is now pointless. That is exactly what phase 7 is for. |
+| "The old code still works, leave it" | It works and it is now pointless. That is exactly what phase 8 is for. |
 | "The job says ok, so it works" | It says it ran. Read the data it was supposed to write. |
 | "I fixed the error it showed me" | You fixed the one that surfaced. List the rest from the code. |
 | "Nobody has complained, so it's fine" | Nobody has used it. That is not the same sentence. |
+| "I read my diff, it's fine" | Reading is not reviewing. Phase 7 runs the gate and ranks findings; do it. |
 | "I'll write a plan file in their repo" | Their repo is not your notebook. Chat, or the project model directory. |

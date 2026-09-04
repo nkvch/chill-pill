@@ -31,7 +31,12 @@ Runs on any request to write, change, prototype or debug code.
    dependency without a reason. Surgical while building.
 5. **Tests where they mean something** (R2+), at the level of the problem a
    module solves, not at the level of getters.
-6. **Reflects at the end** — hands off to `cleanup`.
+6. **Reviews its own diff** (R2+) with Open Mercato's
+   [`om-code-review`](https://github.com/open-mercato/skills/tree/main/skills/om-code-review)
+   — validation gate, severity-ranked findings, breaking-change checklist,
+   mechanical verdict. Blockers and majors get fixed before you see the work.
+   Install it separately: `npx skills add open-mercato/skills --skill om-code-review`.
+7. **Reflects at the end** — hands off to `cleanup`.
 
 Everything durable — commit messages, comments, docs, the project model — is written in
 English, whatever language you're speaking. Artifacts outlive the conversation.
