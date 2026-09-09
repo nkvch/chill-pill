@@ -52,6 +52,12 @@ Read `references/interview.md` for the question bank. Rules of engagement:
 
 - **Ask before designing, not after implementing.** This is the single
   highest-value phase; do not skip it because the request sounds clear.
+- **If a person other than you will open the thing, ask which door they come
+  through** — a link you send them, a tab inside something they are already
+  logged into, a file you hand over — **and what state they are in when they
+  arrive.** Nobody volunteers this: to them it is obvious, and it is the piece
+  that decides whether what you build works for them at all. It is also the
+  question whose absence is invisible until they try it.
 - Ask **concrete, answerable** questions — "веб, мобилка или Telegram-бот?",
   not "какие у тебя требования?".
 - **ONE QUESTION PER MESSAGE. Never a list.** Ask, wait for the answer, react
@@ -90,7 +96,7 @@ Before the first edit, post in chat (**never as a file in the user's repo**):
 
 ```
 Goal:        one sentence, in terms of the problem, not the code
-Done when:   2–4 checkable conditions
+Done when:   2–4 conditions, each checkable FROM THE USER'S SIDE
 Out of scope: the things you are deliberately NOT doing
 Plan:        1. step → verify: how you'll know
              2. step → verify: ...
@@ -99,6 +105,27 @@ Rung:        R1
 
 Keep it short. It is a leash for you, not a deliverable for them. Track the
 steps with TodoWrite for anything beyond two steps.
+
+**Write "done when" as what the human would observe, through the door they
+will actually use.** For anything a person opens — a page, a link you hand
+over, an app — name the door in the condition itself: *"a client opens the
+link in a browser where they are not logged in, signs in, and lands on the
+page"*, not *"the endpoint refuses an unauthenticated request"*. The second
+one is a fact about your code; the first is the thing that was asked for, and
+they are not the same sentence.
+
+Two failure modes this closes, both of which look like success while you work:
+
+- **A criterion written around what you can conveniently measure.** `curl` has
+  no login flow, so a 401 from `curl` reads as "the gate works" while a person
+  opening that address in a window gets raw JSON and a dead end. If the user's
+  door needs a browser, the criterion needs a browser; if you cannot open one,
+  say the condition is unverified rather than quietly swapping in the check you
+  can run.
+- **A door nobody mentioned.** The human pictured sharing a link directly and
+  never said so, because to them it was obvious. That is what §2's "how do they
+  get to it" question is for — and if the answer never came, the condition you
+  write is a guess, so say which door you assumed.
 
 ---
 
@@ -241,6 +268,8 @@ conversation and are read by people who were not in it.
 | "It's obvious what they want" | It is obvious to you because you picked one reading. Ask. |
 | "I'll ask after I show them something" | You'll show them the wrong thing and burn the round trip. |
 | "This is too small to interview" | Then it's one question, not zero. |
+| "They didn't say who opens it, so it's me" | The most expensive assumption in this file. Ask which door, and in what state the person arrives. |
+| "It returns the right status code, so it works" | A status code is not a door. Try the thing the way the human will. |
 | "While I'm here I'll also…" | You are not here for that. Note it, move on. |
 | "They'll want this configurable later" | They'll ask later. Later is cheaper than wrong now. |
 | "It needs a proper architecture" | At R1 it needs to run. |

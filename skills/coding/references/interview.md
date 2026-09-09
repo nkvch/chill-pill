@@ -11,11 +11,31 @@ Concrete beats open-ended: "веб, мобилка или Telegram-бот?" gets
 
 - **What problem is this solving?** Not "what should it do" — what goes wrong
   today without it.
-- **Who uses it?** You alone, a team, strangers on the internet? That single
-  answer decides auth, error handling, and polish.
+- **Who uses it?** You alone, a team, a client, strangers on the internet? That
+  single answer decides auth, error handling, and polish.
+- **How do they get to it, and what state are they in when they arrive?** A link
+  you send them, a tab inside something they are already logged into, a command
+  they run, a file you hand over. Then: logged in or logged out, your machine or
+  theirs, first time or returning. This is the question that is skipped most and
+  costs most — the human pictures a door you never saw, and everything you built
+  works only through your own.
 - **What does done look like?** The moment you'd say "yes, that's it".
 - **How long should this live?** Throwaway experiment, weekend tool, or
   something that has to survive a year.
+
+## Anything a person will open (page, link, app, file you hand over)
+
+Ask these the moment a human other than you might touch it. They decide whether
+the thing works at all for the person who opens it — not whether it works on
+your machine.
+
+- Who opens it, and do you send them the address or do they find it inside
+  something they already use?
+- Is it forwarded onwards — to a client, into a chat, in an email?
+- What should the first arrival look like for someone who is NOT you and NOT
+  logged in: a login page and then the thing, a refusal, or open to anyone?
+- Does it have to keep working tomorrow, next month, after they change laptops?
+- What must NOT be visible to whoever gets the address by accident?
 
 ## New thing from scratch
 
